@@ -17,7 +17,7 @@ on:
         description: 'Mật khẩu ID Apple'
         required: true
       operation:
-        description: 'Thao tác cần làm, lựa chọn: tra cứu, máy chủ cũ, tải xuống, historyver_id, download_id'
+        description: 'Thao tác cần làm, lựa chọn: lookup, historyver, download, historyver_id, download_id'
       
       appBundleId:
         description: 'AppStore Bundle-ID (cần thiết khi sử dụng các thao tác không phải - * _ id)'
