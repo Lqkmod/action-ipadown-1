@@ -1,0 +1,131 @@
+2025-04-08 01:10:14,999 - INFO - [MainThread] - Successfully connected as @spampython_bot
+2025-04-08 01:10:15,015 - INFO - [MainThread] - Google Gemini API Key not found or is placeholder. /gg command disabled.
+2025-04-08 01:10:15,015 - INFO - [MainThread] - --- Initializing DINO BOT (@spampython_bot) ---
+2025-04-08 01:10:15,015 - INFO - [MainThread] - Initializing database...
+2025-04-08 01:10:15,093 - INFO - [MainThread] - Added 'username' column to users table.
+2025-04-08 01:10:15,093 - INFO - [MainThread] - Database schema initialized/verified.
+2025-04-08 01:10:15,093 - INFO - [MainThread] - VIP cache updated. Active VIPs: 25 (Change: 25)
+2025-04-08 01:10:15,093 - INFO - [MainThread] - Running initial cleanup...
+2025-04-08 01:10:15,093 - INFO - [MainThread] - Found 2 expired users for cleanup: [6088007427, 6142492549]
+2025-04-08 01:10:15,108 - INFO - [MainThread] - Deleted 2 expired users from DB.
+2025-04-08 01:10:15,108 - INFO - [MainThread] - VIP cache updated. Active VIPs: 25 (Change: 0)
+2025-04-08 01:10:15,108 - INFO - [MainThread] - --- Bot Configuration ---
+2025-04-08 01:10:15,108 - INFO - [MainThread] - Admin ID: 7193749511 (@dichcutelegram)
+2025-04-08 01:10:15,108 - INFO - [MainThread] - Allowed Group ID: -1002191171631
+2025-04-08 01:10:15,108 - INFO - [MainThread] - Default VIP Duration: 30 days
+2025-04-08 01:10:15,108 - INFO - [MainThread] - VIP Price 1: 50,000 VND / 20 days
+2025-04-08 01:10:15,108 - INFO - [MainThread] - VIP Price 2: 65,000 VND / 30 days
+2025-04-08 01:10:15,124 - INFO - [MainThread] - Initial Bot Status: ACTIVE
+2025-04-08 01:10:15,124 - INFO - [MainThread] - Initial Admin Mode: OFF
+2025-04-08 01:10:15,124 - INFO - [MainThread] - Initial Free Spam: ENABLED
+2025-04-08 01:10:15,124 - INFO - [MainThread] - Blacklisted Numbers Count: 14
+2025-04-08 01:10:15,124 - INFO - [MainThread] - Gemini AI Enabled: False
+2025-04-08 01:10:15,124 - INFO - [MainThread] - Spam API Enabled: True
+2025-04-08 01:10:15,124 - INFO - [MainThread] - Spam Script Path: dec.py
+2025-04-08 01:10:15,124 - INFO - [MainThread] - --- Bot Starting ---
+2025-04-08 01:10:15,124 - INFO - [PeriodicTasks] - Starting periodic task thread.
+2025-04-08 01:10:15,124 - INFO - [MainThread] - Starting polling cycle (Attempt 1)...
+2025-04-08 01:11:15,140 - INFO - [PeriodicTasks] - 2025-04-08 01:11:15.140493: Running periodic cleanup...
+2025-04-14 09:28:45,700 - [INFO] - Gemini AI key not configured. /gg command disabled.
+2025-04-14 09:28:45,702 - [INFO] - ==============================
+2025-04-14 09:28:45,702 - [INFO] - Bot starting initialization...
+2025-04-14 09:28:45,702 - [INFO] - Initializing SQLite Database (VIP)...
+2025-04-14 09:28:45,749 - [INFO] - SQLite Database initialized.
+2025-04-14 09:28:45,749 - [INFO] - Loading VIP Users from SQLite...
+2025-04-14 09:28:45,749 - [INFO] - Loaded 27 active VIP users from SQLite database.
+2025-04-14 09:28:45,749 - [INFO] - Cleaning up expired VIP users from SQLite...
+2025-04-14 09:28:45,749 - [INFO] - Loading Key-Gen Data from JSON...
+2025-04-14 09:28:45,749 - [INFO] - Key-gen data loaded from bot_persistent_data.json. Keys: 57, Activated: 2, Cooldowns: 81
+2025-04-14 09:28:45,749 - [INFO] - blacklist.txt not found, using default blacklist only.
+2025-04-14 09:28:45,749 - [INFO] - ------------------------------
+2025-04-14 09:28:45,749 - [INFO] - Bot Admin ID: 7193749511
+2025-04-14 09:28:45,764 - [INFO] - Allowed Group ID: -1002191171631
+2025-04-14 09:28:46,264 - [INFO] - Bot Info: ID=6939568666, Name='BOT DINO', User=@spampython_bot
+2025-04-14 09:28:46,264 - [INFO] - Admin Username: @dichcutelegram
+2025-04-14 09:28:46,264 - [INFO] - Bot started at: 2025-04-14 09:28:46
+2025-04-14 09:28:46,264 - [INFO] - Default Parse Mode: HTML
+2025-04-14 09:28:46,264 - [INFO] - ------------------------------
+2025-04-14 09:28:46,264 - [INFO] - Initialization complete. Starting polling loop...
+2025-04-14 09:28:46,264 - [INFO] - Bot connected and polling...
+2025-04-14 09:28:48,124 - [INFO] - [SPAM FREE] Started dec.py for 0393167123 (User: 6849747743) PID: 4900
+2025-04-14 09:29:46,409 - [INFO] - User 7193749511 requesting key. Generated Key: Dinotool-CMYLDZHL.
+2025-04-14 09:29:46,597 - [INFO] - Key Dinotool-CMYLDZHL saved for user 7193749511. Expiry: 2025-04-14 21:29:46.580650
+2025-04-14 09:29:46,674 - [INFO] - Successfully shortened URL for key Dinotool-CMYLDZHL: https://yeumoney.com/Qn557oYIs
+2025-04-14 09:30:27,301 - [INFO] - User 7193749511 attempting activation with key: 'Dinotool-CMYLDZHL'
+2025-04-14 09:30:50,084 - [INFO] - User 7193749511 activated successfully with key Dinotool-CMYLDZHL. Expires: 2025-04-14 21:30
+2025-04-14 09:50:14,278 - [INFO] - __main__ - Gemini AI key not configured. /gg command disabled.
+2025-04-14 09:50:14,278 - [INFO] - __main__ - ==============================
+2025-04-14 09:50:14,278 - [INFO] - __main__ - Bot starting initialization...
+2025-04-14 09:50:14,278 - [INFO] - __main__ - Initializing SQLite Database (VIP)...
+2025-04-14 09:50:14,278 - [INFO] - __main__ - SQLite Database (VIP) initialized.
+2025-04-14 09:50:14,278 - [INFO] - __main__ - Loading VIP Users from SQLite...
+2025-04-14 09:50:14,278 - [INFO] - __main__ - Loaded 27 active VIP users from SQLite.
+2025-04-14 09:50:14,278 - [INFO] - __main__ - Cleaning up expired VIP users from SQLite...
+2025-04-14 09:50:14,278 - [INFO] - __main__ - Loading Key-Gen & Cooldown Data from JSON...
+2025-04-14 09:50:14,278 - [INFO] - __main__ - Loaded state data from bot_persistent_data.json. Keys: 58, Activated: 3, Cooldowns: T=0/F=0/G=81
+2025-04-14 09:50:14,286 - [INFO] - __main__ - Running initial cleanup for expired key data...
+2025-04-14 09:50:14,286 - [INFO] - __main__ - [Cleanup JSON] Removed expired UNUSED key: Dinotool-lAEZltVg
+2025-04-14 09:50:14,286 - [INFO] - __main__ - [Cleanup JSON] Data changed, saving...
+2025-04-14 09:51:38,596 - [INFO] - __main__ - Gemini AI key not configured. /gg command disabled.
+2025-04-14 09:51:38,603 - [INFO] - __main__ - ==============================
+2025-04-14 09:51:38,603 - [INFO] - __main__ - Bot starting initialization...
+2025-04-14 09:51:38,603 - [INFO] - __main__ - Initializing SQLite Database (VIP)...
+2025-04-14 09:51:38,603 - [INFO] - __main__ - SQLite Database (VIP) initialized.
+2025-04-14 09:51:38,603 - [INFO] - __main__ - Loading VIP Users from SQLite...
+2025-04-14 09:51:38,618 - [INFO] - __main__ - Loaded 27 active VIP users from SQLite.
+2025-04-14 09:51:38,618 - [INFO] - __main__ - Cleaning up expired VIP users from SQLite...
+2025-04-14 09:51:38,618 - [INFO] - __main__ - Loading Key-Gen & Cooldown Data from JSON...
+2025-04-14 09:51:38,618 - [INFO] - __main__ - Loaded state data from bot_persistent_data.json. Keys: 58, Activated: 3, Cooldowns: T=0/F=0/G=81
+2025-04-14 09:51:38,618 - [INFO] - __main__ - Running initial cleanup for expired key data...
+2025-04-14 09:51:38,618 - [INFO] - __main__ - [Cleanup JSON] Removed expired UNUSED key: Dinotool-lAEZltVg
+2025-04-14 09:51:38,618 - [INFO] - __main__ - [Cleanup JSON] Data changed, saving...
+2025-04-14 09:56:04,090 - [INFO] - Gemini AI key not configured. /gg command disabled.
+2025-04-14 09:56:04,091 - [INFO] - ==============================
+2025-04-14 09:56:04,091 - [INFO] - Bot starting initialization...
+2025-04-14 09:56:04,092 - [INFO] - Initializing SQLite Database (VIP)...
+2025-04-14 09:56:04,093 - [INFO] - SQLite Database initialized.
+2025-04-14 09:56:04,093 - [INFO] - Loading VIP Users from SQLite...
+2025-04-14 09:56:04,093 - [INFO] - Loaded 27 active VIP users from SQLite database.
+2025-04-14 09:56:04,094 - [INFO] - Cleaning up expired VIP users from SQLite...
+2025-04-14 09:56:04,094 - [INFO] - Loading Key-Gen Data from JSON...
+2025-04-14 09:56:04,094 - [INFO] - Key-gen data loaded from bot_persistent_data.json. Keys: 58, Activated: 3, Cooldowns: 81
+2025-04-14 09:56:04,095 - [INFO] - blacklist.txt not found, using default blacklist only.
+2025-04-14 09:56:04,095 - [INFO] - ------------------------------
+2025-04-14 09:56:04,095 - [INFO] - Bot Admin ID: 7193749511
+2025-04-14 09:56:04,095 - [INFO] - Allowed Group ID: -1002191171631
+2025-04-14 09:56:04,630 - [INFO] - Bot Info: ID=6939568666, Name='BOT DINO', User=@spampython_bot
+2025-04-14 09:56:04,630 - [INFO] - Admin Username: @dichcutelegram
+2025-04-14 09:56:04,630 - [INFO] - Bot started at: 2025-04-14 09:56:04
+2025-04-14 09:56:04,630 - [INFO] - Default Parse Mode: HTML
+2025-04-14 09:56:04,630 - [INFO] - ------------------------------
+2025-04-14 09:56:04,630 - [INFO] - Initialization complete. Starting polling loop...
+2025-04-14 09:56:04,630 - [INFO] - Bot connected and polling...
+2025-04-14 09:56:05,318 - [INFO] - User 7193749511 requesting key. Generated Key: Dinotool-80TSI9V5.
+2025-04-14 09:56:05,833 - [INFO] - Key Dinotool-80TSI9V5 saved for user 7193749511. Expiry: 2025-04-14 21:56:05.833463
+2025-04-14 09:56:05,927 - [INFO] - Successfully shortened URL for key Dinotool-80TSI9V5: https://yeumoney.com/XmkZb-
+2025-04-14 09:58:43,215 - [INFO] - Gemini AI key not configured. /gg command disabled.
+2025-04-14 09:58:43,215 - [INFO] - ==============================
+2025-04-14 09:58:43,215 - [INFO] - Bot starting initialization...
+2025-04-14 09:58:43,215 - [INFO] - Initializing SQLite Database (VIP)...
+2025-04-14 09:58:43,215 - [INFO] - SQLite Database initialized.
+2025-04-14 09:58:43,215 - [INFO] - Loading VIP Users from SQLite...
+2025-04-14 09:58:43,215 - [INFO] - Loaded 27 active VIP users from SQLite database.
+2025-04-14 09:58:43,215 - [INFO] - Cleaning up expired VIP users from SQLite...
+2025-04-14 09:58:43,215 - [INFO] - Loading Key-Gen Data from JSON...
+2025-04-14 09:58:43,230 - [INFO] - Key-gen data loaded from bot_persistent_data.json. Keys: 59, Activated: 3, Cooldowns: 81
+2025-04-14 09:58:43,230 - [INFO] - blacklist.txt not found, using default blacklist only.
+2025-04-14 09:58:43,230 - [INFO] - ------------------------------
+2025-04-14 09:58:43,230 - [INFO] - Bot Admin ID: 7193749511
+2025-04-14 09:58:43,230 - [INFO] - Allowed Group ID: -1002191171631
+2025-04-14 09:58:43,768 - [INFO] - Bot Info: ID=6939568666, Name='BOT DINO', User=@spampython_bot
+2025-04-14 09:58:43,770 - [INFO] - Admin Username: @dichcutelegram
+2025-04-14 09:58:43,771 - [INFO] - Bot started at: 2025-04-14 09:58:43
+2025-04-14 09:58:43,772 - [INFO] - Default Parse Mode: HTML
+2025-04-14 09:58:43,772 - [INFO] - ------------------------------
+2025-04-14 09:58:43,774 - [INFO] - Initialization complete. Starting polling loop...
+2025-04-14 09:58:43,774 - [INFO] - Bot connected and polling...
+2025-04-14 09:59:29,764 - [INFO] - [ADMIN] Private chat enabled by 7193749511
+2025-04-14 09:59:45,500 - [INFO] - Removed VIP user 7193749511 from SQLite database.
+2025-04-14 09:59:45,500 - [INFO] - Loaded 26 active VIP users from SQLite database.
+2025-04-14 09:59:45,874 - [INFO] - [ADMIN] Removed VIP User 7193749511 by Admin 7193749511
+2025-04-14 10:00:17,118 - [INFO] - [SPAM FREE] Started dec.py for 0827272778 (User: 7193749511) PID: 4076

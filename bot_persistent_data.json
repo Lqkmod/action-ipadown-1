@@ -1,0 +1,448 @@
+{
+    "valid_keys": {
+        "Dinotool-HNQI9OIl": {
+            "user_id_generator": 7193749511,
+            "generation_time": 1744401110.220278,
+            "expiry_time": 1744444310.220278,
+            "used_by": 7193749511
+        },
+        "Dinotool-hRm55dk2": {
+            "user_id_generator": 5834448297,
+            "generation_time": 1744401683.0866928,
+            "expiry_time": 1744444883.0866928,
+            "used_by": 5834448297
+        },
+        "Dinotool-ciVAvvbx": {
+            "user_id_generator": 7193749511,
+            "generation_time": 1744402933.3935325,
+            "expiry_time": 1744446133.3935325,
+            "used_by": 136817688
+        },
+        "Dinotool-L8bnRTEv": {
+            "user_id_generator": 6956777864,
+            "generation_time": 1744404279.4616742,
+            "expiry_time": 1744447479.4616742,
+            "used_by": 6956777864
+        },
+        "Dinotool-6l5pOTnv": {
+            "user_id_generator": 7267246841,
+            "generation_time": 1744411859.9427576,
+            "expiry_time": 1744455059.9427576,
+            "used_by": 7267246841
+        },
+        "Dinotool-wld4Cyp5": {
+            "user_id_generator": 5680547671,
+            "generation_time": 1744412145.679572,
+            "expiry_time": 1744455345.679572,
+            "used_by": 5680547671
+        },
+        "Dinotool-5nlewlhy": {
+            "user_id_generator": 6506791710,
+            "generation_time": 1744412624.2305694,
+            "expiry_time": 1744455824.2305694,
+            "used_by": 1466267759
+        },
+        "Dinotool-k4XwY1Yi": {
+            "user_id_generator": 6009248983,
+            "generation_time": 1744413490.691245,
+            "expiry_time": 1744456690.691245,
+            "used_by": 6009248983
+        },
+        "Dinotool-3fvj6wvt": {
+            "user_id_generator": 6818088053,
+            "generation_time": 1744414035.9303322,
+            "expiry_time": 1744457235.9303322,
+            "used_by": 6818088053
+        },
+        "Dinotool-KLIEMsmH": {
+            "user_id_generator": 5821922356,
+            "generation_time": 1744414761.7313476,
+            "expiry_time": 1744457961.7313476,
+            "used_by": 5821922356
+        },
+        "Dinotool-aeZPsAXu": {
+            "user_id_generator": 7130302519,
+            "generation_time": 1744416180.2817519,
+            "expiry_time": 1744459380.2817519,
+            "used_by": 7130302519
+        },
+        "Dinotool-tIe8y5hT": {
+            "user_id_generator": 7574978333,
+            "generation_time": 1744416186.016219,
+            "expiry_time": 1744459386.016219,
+            "used_by": 7574978333
+        },
+        "Dinotool-jIT8cgvF": {
+            "user_id_generator": 7050272029,
+            "generation_time": 1744420087.9322872,
+            "expiry_time": 1744463287.9322872,
+            "used_by": 7050272029
+        },
+        "Dinotool-Vso66L0I": {
+            "user_id_generator": 6381816278,
+            "generation_time": 1744420255.4180748,
+            "expiry_time": 1744463455.4180748,
+            "used_by": 7193749511
+        },
+        "Dinotool-Ri66V22I": {
+            "user_id_generator": 7193749511,
+            "generation_time": 1744422877.295824,
+            "expiry_time": 1744466077.295824,
+            "used_by": 7193749511
+        },
+        "Dinotool-E9oImEt9": {
+            "user_id_generator": 1440940677,
+            "generation_time": 1744423389.547445,
+            "expiry_time": 1744466589.547445,
+            "used_by": 1440940677
+        },
+        "Dinotool-8IbRYBGy": {
+            "user_id_generator": 1639558108,
+            "generation_time": 1744437133.9003108,
+            "expiry_time": 1744480333.9003108,
+            "used_by": 1639558108
+        },
+        "Dinotool-WxFEmPN1": {
+            "user_id_generator": 5778976510,
+            "generation_time": 1744438072.7272553,
+            "expiry_time": 1744481272.7272553,
+            "used_by": 5778976510
+        },
+        "Dinotool-pGVe06ND": {
+            "user_id_generator": 2017212789,
+            "generation_time": 1744442838.962458,
+            "expiry_time": 1744486038.962458,
+            "used_by": 2017212789
+        },
+        "Dinotool-fr97JHTw": {
+            "user_id_generator": 5049219683,
+            "generation_time": 1744445091.9613116,
+            "expiry_time": 1744488291.9613116,
+            "used_by": 5049219683
+        },
+        "Dinotool-QXwIcLoF": {
+            "user_id_generator": 5966596809,
+            "generation_time": 1744445773.1009784,
+            "expiry_time": 1744488973.1009784,
+            "used_by": 5966596809
+        },
+        "Dinotool-ytPrP8Nv": {
+            "user_id_generator": 7112988712,
+            "generation_time": 1744449676.4964457,
+            "expiry_time": 1744492876.4964457,
+            "used_by": 7112988712
+        },
+        "Dinotool-2S8lHvKe": {
+            "user_id_generator": 6212035034,
+            "generation_time": 1744452588.4771194,
+            "expiry_time": 1744495788.4771194,
+            "used_by": 6212035034
+        },
+        "Dinotool-V2cUDWDj": {
+            "user_id_generator": 5495563512,
+            "generation_time": 1744452912.8374517,
+            "expiry_time": 1744496112.8374517,
+            "used_by": 5495563512
+        },
+        "Dinotool-jhmTs00S": {
+            "user_id_generator": 6506791710,
+            "generation_time": 1744453987.072571,
+            "expiry_time": 1744497187.072571,
+            "used_by": 6506791710
+        },
+        "Dinotool-7B0u4KU0": {
+            "user_id_generator": 5533616042,
+            "generation_time": 1744454546.259128,
+            "expiry_time": 1744497746.259128,
+            "used_by": 5533616042
+        },
+        "Dinotool-Ahh5VE6K": {
+            "user_id_generator": 5680547671,
+            "generation_time": 1744457662.5668178,
+            "expiry_time": 1744500862.5668178,
+            "used_by": 5680547671
+        },
+        "Dinotool-gnGG2sCU": {
+            "user_id_generator": 6778707203,
+            "generation_time": 1744460011.7075508,
+            "expiry_time": 1744503211.7075508,
+            "used_by": 6778707203
+        },
+        "Dinotool-68gezik4": {
+            "user_id_generator": 7574978333,
+            "generation_time": 1744461446.348495,
+            "expiry_time": 1744504646.348495,
+            "used_by": 7574978333
+        },
+        "Dinotool-VAoxLJC0": {
+            "user_id_generator": 7641042548,
+            "generation_time": 1744462329.442859,
+            "expiry_time": 1744505529.442859,
+            "used_by": 7641042548
+        },
+        "Dinotool-6paCbjqz": {
+            "user_id_generator": 7756735388,
+            "generation_time": 1744462458.1778843,
+            "expiry_time": 1744505658.1778843,
+            "used_by": 7756735388
+        },
+        "Dinotool-ZqnJMQbW": {
+            "user_id_generator": 5471109569,
+            "generation_time": 1744464977.7063286,
+            "expiry_time": 1744508177.7063286,
+            "used_by": 5471109569
+        },
+        "Dinotool-joSAZXFt": {
+            "user_id_generator": 6905200149,
+            "generation_time": 1744466487.6908898,
+            "expiry_time": 1744509687.6908898,
+            "used_by": 6905200149
+        },
+        "Dinotool-ybhMOxsh": {
+            "user_id_generator": 1440940677,
+            "generation_time": 1744467598.6278841,
+            "expiry_time": 1744510798.6278841,
+            "used_by": 1440940677
+        },
+        "Dinotool-uo30J9lz": {
+            "user_id_generator": 6009248983,
+            "generation_time": 1744467970.1600463,
+            "expiry_time": 1744511170.1600463,
+            "used_by": 6009248983
+        },
+        "Dinotool-o9VBUWHr": {
+            "user_id_generator": 6140477212,
+            "generation_time": 1744469018.3201115,
+            "expiry_time": 1744512218.3201115,
+            "used_by": 6140477212
+        },
+        "Dinotool-YjhfCZcq": {
+            "user_id_generator": 1801790967,
+            "generation_time": 1744474179.89353,
+            "expiry_time": 1744517379.89353,
+            "used_by": 1801790967
+        },
+        "Dinotool-ujKiUMyv": {
+            "user_id_generator": 7403277868,
+            "generation_time": 1744483856.2073154,
+            "expiry_time": 1744527056.2073154,
+            "used_by": 7403277868
+        },
+        "Dinotool-Y860gjsG": {
+            "user_id_generator": 6032620689,
+            "generation_time": 1744503085.2364836,
+            "expiry_time": 1744546285.2364836,
+            "used_by": 6032620689
+        },
+        "Dinotool-VULNDO68": {
+            "user_id_generator": 7193749511,
+            "generation_time": 1744506595.7828643,
+            "expiry_time": 1744549795.7828643,
+            "used_by": 7193749511
+        },
+        "Dinotool-h8wXJVbq": {
+            "user_id_generator": 6140477212,
+            "generation_time": 1744515386.2385435,
+            "expiry_time": 1744558586.2385435,
+            "used_by": 6140477212
+        },
+        "Dinotool-uTMEE9r5": {
+            "user_id_generator": 7112988712,
+            "generation_time": 1744515467.0980232,
+            "expiry_time": 1744558667.0980232,
+            "used_by": 7112988712
+        },
+        "Dinotool-d3SKlwAZ": {
+            "user_id_generator": 1769239286,
+            "generation_time": 1744515926.1603343,
+            "expiry_time": 1744559126.1603343,
+            "used_by": 1769239286
+        },
+        "Dinotool-FXhg2O07": {
+            "user_id_generator": 5778976510,
+            "generation_time": 1744516842.2534142,
+            "expiry_time": 1744560042.2534142,
+            "used_by": 5778976510
+        },
+        "Dinotool-s33gmYzT": {
+            "user_id_generator": 6416556065,
+            "generation_time": 1744517556.3800745,
+            "expiry_time": 1744560756.3800745,
+            "used_by": 6416556065
+        },
+        "Dinotool-wejvESYN": {
+            "user_id_generator": 7403277868,
+            "generation_time": 1744527534.0594122,
+            "expiry_time": 1744570734.0594122,
+            "used_by": 7403277868
+        },
+        "Dinotool-XFWgCexv": {
+            "user_id_generator": 6212035034,
+            "generation_time": 1744537580.443035,
+            "expiry_time": 1744580780.443035,
+            "used_by": 6212035034
+        },
+        "Dinotool-5Puj4uo1": {
+            "user_id_generator": 5868621391,
+            "generation_time": 1744541300.418282,
+            "expiry_time": 1744584500.418282,
+            "used_by": 5868621391
+        },
+        "Dinotool-Bhbv0ozw": {
+            "user_id_generator": 5925570244,
+            "generation_time": 1744541454.444612,
+            "expiry_time": 1744584654.444612,
+            "used_by": 5925570244
+        },
+        "Dinotool-Iy8ZEtvA": {
+            "user_id_generator": 7958593381,
+            "generation_time": 1744543402.4514146,
+            "expiry_time": 1744586602.4514146,
+            "used_by": 7958593381
+        },
+        "Dinotool-HsYaV5Og": {
+            "user_id_generator": 5444395748,
+            "generation_time": 1744544253.4070807,
+            "expiry_time": 1744587453.4070807,
+            "used_by": 5444395748
+        },
+        "Dinotool-wlLsgCDs": {
+            "user_id_generator": 6212035034,
+            "generation_time": 1744547216.4117756,
+            "expiry_time": 1744590416.4117756,
+            "used_by": 6212035034
+        },
+        "Dinotool-lAEZltVg": {
+            "user_id_generator": 7300009516,
+            "generation_time": 1744548289.4008174,
+            "expiry_time": 1744591489.4008174,
+            "used_by": null
+        },
+        "Dinotool-FBMaO4IZ": {
+            "user_id_generator": 5989722003,
+            "generation_time": 1744548853.436341,
+            "expiry_time": 1744592053.436341,
+            "used_by": 6565871655
+        },
+        "Dinotool-DjDM3tmj": {
+            "user_id_generator": 6226096908,
+            "generation_time": 1744561955.4143298,
+            "expiry_time": 1744605155.4143298,
+            "used_by": 6226096908
+        },
+        "Dinotool-aifup5ci": {
+            "user_id_generator": 7112988712,
+            "generation_time": 1744563594.7717953,
+            "expiry_time": 1744606794.7717953,
+            "used_by": null
+        },
+        "Dinotool-pjP3TuZU": {
+            "user_id_generator": 7193749511,
+            "generation_time": 1744591183.026264,
+            "expiry_time": 1744634383.026264,
+            "used_by": null
+        },
+        "Dinotool-CMYLDZHL": {
+            "user_id_generator": 7193749511,
+            "generation_time": 1744594186.5806503,
+            "expiry_time": 1744637386.5806503,
+            "used_by": 7193749511
+        },
+        "Dinotool-80TSI9V5": {
+            "user_id_generator": 7193749511,
+            "generation_time": 1744595765.8334632,
+            "expiry_time": 1744638965.8334632,
+            "used_by": null
+        }
+    },
+    "activated_users": {
+        "6565871655": 1744600417.58728,
+        "6226096908": 1744605725.517195,
+        "7193749511": 1744637427.3017714
+    },
+    "user_cooldowns": {
+        "getkey": {
+            "7193749511": 1744595765.9271686,
+            "6997239654": 1744401135.2993999,
+            "136817688": 1744402414.330151,
+            "5834448297": 1744401685.8365643,
+            "6647126313": 1744401689.8992238,
+            "7958593381": 1744543600.4454715,
+            "7039863260": 1744403799.6985838,
+            "6956777864": 1744404282.2273471,
+            "6565871655": 1744404557.9988487,
+            "5245279740": 1744544682.4200106,
+            "7267246841": 1744546083.6102686,
+            "5680547671": 1744457662.6761968,
+            "1466267759": 1744412407.6662204,
+            "6506791710": 1744453987.1819177,
+            "5663334329": 1744413464.5033941,
+            "6009248983": 1744467970.2381337,
+            "6870785415": 1744413569.2700322,
+            "5534924292": 1744413758.8193803,
+            "6818088053": 1744414037.9926934,
+            "5904529869": 1744414676.481243,
+            "5821922356": 1744414763.918853,
+            "7130302519": 1744416183.141147,
+            "7574978333": 1744527497.7938452,
+            "6518805824": 1744417825.254381,
+            "6416556065": 1744517556.5050287,
+            "5645085318": 1744418641.6627684,
+            "6740005446": 1744542011.4838717,
+            "7050272029": 1744420090.494984,
+            "6245086283": 1744419487.1961088,
+            "6381816278": 1744420258.8247726,
+            "6212035034": 1744547219.5889194,
+            "7428482781": 1744420762.0136318,
+            "1440940677": 1744467598.7372818,
+            "1639558108": 1744437134.2128468,
+            "6195920524": 1744437146.2908294,
+            "5778976510": 1744516842.378411,
+            "6961149801": 1744440811.4303834,
+            "5725649108": 1744442017.135769,
+            "2017212789": 1744442839.0406773,
+            "1623527841": 1744443890.5571756,
+            "5516213781": 1744444382.4926708,
+            "5049219683": 1744445092.0707302,
+            "5966596809": 1744445773.1790652,
+            "1669334788": 1744445915.0693765,
+            "6140477212": 1744515386.3323305,
+            "7112988712": 1744563610.4910862,
+            "7285691634": 1744449743.2301557,
+            "5495563512": 1744452912.946789,
+            "6754573782": 1744453917.4942946,
+            "6735858967": 1744454524.3996563,
+            "5533616042": 1744454909.4153419,
+            "6051924439": 1744454908.5247288,
+            "6778707203": 1744460011.7857022,
+            "6064267192": 1744461426.4889421,
+            "7641042548": 1744462329.5377636,
+            "7756735388": 1744462458.2716439,
+            "6421239637": 1744464779.2069564,
+            "5471109569": 1744464977.8157039,
+            "6905200149": 1744466487.8002467,
+            "7139338437": 1744468601.3203707,
+            "6492253650": 1744468821.5704975,
+            "1368828769": 1744470283.4610648,
+            "1801790967": 1744474179.9716418,
+            "6347177708": 1744476096.7378402,
+            "6200025714": 1744477414.163272,
+            "7042632297": 1744480237.0687237,
+            "7403277868": 1744527534.168855,
+            "2114952264": 1744484141.1458926,
+            "6032620689": 1744503085.345865,
+            "1769239286": 1744515926.26966,
+            "5981653534": 1744528201.8252988,
+            "5687349773": 1744534767.6694207,
+            "5868621391": 1744541302.459302,
+            "5925570244": 1744541455.5740387,
+            "5457864537": 1744543485.5917654,
+            "6452244684": 1744544100.4712992,
+            "5444395748": 1744544254.469702,
+            "7703733913": 1744545915.6082666,
+            "7300009516": 1744548290.8794675,
+            "5989722003": 1744548856.5655015,
+            "6226096908": 1744561963.5645216
+        }
+    }
+}
