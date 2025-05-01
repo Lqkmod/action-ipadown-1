@@ -525,7 +525,6 @@ async def tim_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     except Exception: # If edit fails (e.g., message deleted), try sending new
         try: await context.bot.send_message(chat_id, final_text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
         except Exception as e_send: logger.error(f"/tim final send err: {e_send}")
-
 async def fl_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     if not update or not update.message: return
     user = update.effective_user; chat_id = update.effective_chat.id
@@ -535,15 +534,21 @@ async def fl_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None
     if not can_use_feature(user_id):
         await send_temporary_message(update, context, f"⚠️ {mention} cần VIP/Key cho /fl."); await delete_user_message(update, context); return
 
-    args = context.args; target_user = None; err = None
+    args = context.args; target_user = None; err = None; target_key = None # Khởi tạo target_key
     if not args: err = "⚠️ Cú pháp: /fl <username>"
     else:
-        target_raw = args[0].strip().lstrip("@")
-        if not target_raw: err = "⚠️ Username không được trống."
-        else: target_user = target_raw # Keep original case for API call? Or use lowercase? Assume lowercase ok for API.
-              target_key = target_user.lower() # ALWAYS use lowercase for internal dict key
+        uname_raw = args[0].strip().lstrip("@")
+        if not uname_raw:
+             err = "⚠️ Username trống."
+        else:
+            target_user = uname_raw # Giữ nguyên hoa thường cho API call (hoặc thay đổi nếu API chỉ nhận lowercase)
+            target_key = target_user.lower() # --- CORRECT INDENTATION --- ALWAYS use lowercase for internal dict key
 
     if err: await send_temporary_message(update, context, err); await delete_user_message(update, context); return
+    # Đảm bảo target_key được gán giá trị nếu không có lỗi
+    if not target_key:
+         logger.error(f"/fl command: target_key is None after parsing for user {user_id}")
+         await send_temporary_message(update, context, "❌ Lỗi xử lý username."); await delete_user_message(update, context); return
 
     # Check cooldown using lowercase key
     last_use = user_fl_cooldown.get(uid_str, {}).get(target_key)
@@ -557,33 +562,51 @@ async def fl_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None
 
     # Schedule background task
     context.application.create_task(
+        # Chú ý: Truyền cả target_user (gốc) và target_key (lowercase)
         process_fl_request_background(context, chat_id, uid_str, target_user, target_key, proc_msg.message_id, mention),
         name=f"fl_bg_{uid_str}_{target_key}")
 
 async def process_fl_request_background(context: ContextTypes.DEFAULT_TYPE, chat_id: int, user_id_str: str, target_username: str, target_key: str, processing_msg_id: int, invoking_user_mention: str):
     """Background task for /fl. Uses target_key (lowercase) for cooldown."""
-    log_target = html.escape(target_username) # Use original case for logging if desired
-    logger.info(f"[BG /fl] User {user_id_str} -> @{log_target}")
-    # Call API with original case (target_username) assuming API might need it.
-    # If API is case-insensitive, using target_key here is also fine.
-    api_result = await call_follow_api(user_id_str, target_username, context.bot.token)
+    log_target = html.escape(target_username) # Log với username gốc
+    logger.info(f"[BG /fl] User {user_id_str} -> @{log_target} (key: {target_key})")
+
+    # QUAN TRỌNG: Gọi API với username gốc (target_username) hay lowercase (target_key)?
+    # Giả sử API cần username gốc. Nếu API không phân biệt hoa thường, dùng target_key cũng được.
+    api_result = await call_follow_api(user_id_str, target_username, context.bot.token) # <<< SỬ DỤNG target_username
+
     success = api_result["success"]; api_message = api_result["message"]; api_data = api_result["data"]
     final_text = ""; info = ""; follow = ""
 
     if api_data and isinstance(api_data, dict): # Parse optional detailed info
         try:
-            n=html.escape(str(api_data.get("name","?"))); u=html.escape(str(api_data.get("username",target_key))); a=api_data.get("avatar")
-            info = f"👤 <a href='https://tiktok.com/@{u}'>{n}</a>" + (f" <a href='{html.escape(a)}'>🖼️</a>" if a else "")
+            # Sử dụng target_key (lowercase) để hiển thị nếu API không trả về username chính xác
+            n=html.escape(str(api_data.get("name","?"))); u=html.escape(str(api_data.get("username", target_key))); a=api_data.get("avatar")
+            info = f"👤 <a href='https://tiktok.com/@{u}'>{n}</a>" + (f" <a href='{html.escape(a)}'>🖼️</a>" if a and isinstance(a, str) and a.startswith("http") else "")
             b=api_data.get("followers_before"); d=api_data.get("followers_add"); f=api_data.get("followers_after")
             if any(x is not None for x in [b,d,f]): # Only show if data exists
                 bs = f"{int(b):,}" if isinstance(b,(int,float)) else str(b or '?')
-                ds = "?"; # Handle follower delta carefully
-                if isinstance(d,(int,float)): ds = f"+{int(d):,}" if d > 0 else f"{int(d):,}"
-                elif isinstance(d,str): try: di=int(re.sub(r'[^\d-]','',d)); ds=f"+{di:,}" if di > 0 else f"{di:,}" except: ds=html.escape(d[:10])+"?"
+                ds = "?"; gain_val = 0 # Handle follower delta carefully
+                if isinstance(d,(int,float)): gain_val = int(d); ds = f"+{gain_val:,}" if gain_val > 0 else f"{gain_val:,}"
+                elif isinstance(d,str): try: gain_val=int(re.sub(r'[^\d-]','',d)); ds=f"+{gain_val:,}" if gain_val > 0 else f"{gain_val:,}" except: ds=html.escape(d[:10])+"?"
                 fs = f"{int(f):,}" if isinstance(f,(int,float)) else str(f or '?')
                 follow = f"📈 <code>{html.escape(bs)} → {ds} → {html.escape(fs)}</code>"
         except Exception as e: logger.warning(f"[BG /fl Parse Err @{log_target}]: {e}")
+    elif success: # Fallback info if API succeeded but no data details
+        info = f"👤 <code>@{html.escape(target_key)}</code>" # Dùng key lowercase
 
+    if success:
+        # Use target_key (lowercase) for cooldown dict
+        user_fl_cooldown[user_id_str][target_key] = time.time(); save_data()
+        final_text = f"✅ <b>Follow OK!</b> {invoking_user_mention}\n{info}\n{follow}".strip()
+    else: # Failure
+        # Hiển thị username gốc khi báo lỗi
+        final_text = f"❌ <b>Lỗi /fl!</b> {invoking_user_mention}\nTarget: <code>@{html.escape(target_username)}</code>\n💬 <i>{api_message}</i>".strip()
+        if "đợi" in api_message.lower() or "wait" in api_message.lower():
+            final_text += f"\n\n<i>ℹ️ API yêu cầu chờ. Thử lại sau hoặc dùng <code>/treo {html.escape(target_username)}</code> (VIP).</i>"
+
+    try: await context.bot.edit_message_text(final_text, chat_id, processing_msg_id, ParseMode.HTML, disable_web_page_preview=True)
+    except Exception as e: logger.warning(f"[BG /fl Edit Err]: {e}")
     if success:
         # Use target_key (lowercase) for cooldown dict
         user_fl_cooldown[user_id_str][target_key] = time.time(); save_data()
