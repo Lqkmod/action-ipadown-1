@@ -1000,7 +1000,7 @@ async def getkey_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
             except Exception as e_edit: logger.warning(f"Failed edit /getkey msg {processing_msg.message_id}: {e_edit}"); await context.bot.send_message(chat_id, text=final_response_text, parse_mode=ParseMode.HTML)
         else: logger.warning(f"/getkey U:{user_id} processing msg None"); await context.bot.send_message(chat_id, text=final_response_text, parse_mode=ParseMode.HTML)
 
-# --- Lệnh /nhapkey ---
+## --- Lệnh /nhapkey (Đã sửa lỗi cú pháp lần 2) ---
 async def nhapkey_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     if not update or not update.message: return
     user = update.effective_user; user_id = user.id; user_id_str = str(user_id)
@@ -1026,14 +1026,26 @@ async def nhapkey_command(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     if not key_data: final_response_text = f"❌ Key <code>{html.escape(submitted_key)}</code> không tồn tại.\nKiểm tra lại hoặc dùng <code>/getkey</code>."
     elif key_data.get("used_by") is not None:
         used_by_id = key_data["used_by"]; activation_time_ts = key_data.get("activation_time"); used_time_str = ""
-        if activation_time_ts: try: used_dt = datetime.fromtimestamp(float(activation_time_ts)); used_time_str = f" lúc {used_dt.strftime('%H:%M %d/%m/%Y')}"
-        except Exception as e: logger.warning(f"Err fmt act time {activation_time_ts} key {submitted_key}: {e}")
+        # <<< SỬA LỖI CÚ PHÁP TẠI ĐÂY (LẦN 2) >>>
+        if activation_time_ts:
+            # 'try' phải ở dòng mới và thụt vào
+            try:
+                used_dt = datetime.fromtimestamp(float(activation_time_ts))
+                used_time_str = f" lúc {used_dt.strftime('%H:%M %d/%m/%Y')}"
+            except Exception as e:
+                logger.warning(f"Err fmt act time {activation_time_ts} key {submitted_key}: {e}")
         if int(used_by_id) == user_id: final_response_text = f"⚠️ Bạn đã kích hoạt key này rồi{used_time_str}."
         else: final_response_text = f"❌ Key <code>{html.escape(submitted_key)}</code> đã bị người khác dùng{used_time_str}."
     elif current_time > float(key_data.get("expiry_time", 0)):
         expiry_time_ts = key_data.get("expiry_time"); expiry_time_str = ""
-        if expiry_time_ts: try: expiry_dt = datetime.fromtimestamp(float(expiry_time_ts)); expiry_time_str = f" vào lúc {expiry_dt.strftime('%H:%M %d/%m/%Y')}"
-        except Exception as e: logger.warning(f"Err fmt key expiry {expiry_time_ts} key {submitted_key}: {e}")
+        # <<< SỬA LỖI CÚ PHÁP TẠI ĐÂY (LẦN 2) >>>
+        if expiry_time_ts:
+             # 'try' phải ở dòng mới và thụt vào
+            try:
+                expiry_dt = datetime.fromtimestamp(float(expiry_time_ts))
+                expiry_time_str = f" vào lúc {expiry_dt.strftime('%H:%M %d/%m/%Y')}"
+            except Exception as e:
+                logger.warning(f"Err fmt key expiry {expiry_time_ts} key {submitted_key}: {e}")
         final_response_text = f"❌ Key <code>{html.escape(submitted_key)}</code> đã hết hạn nhập{expiry_time_str}. Dùng <code>/getkey</code> lấy key mới."
     else:
         try:
@@ -1051,48 +1063,6 @@ async def nhapkey_command(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     if should_delete_cmd: await delete_user_message(update, context, original_message_id)
     try: reply_mode = not should_delete_cmd; await update.message.reply_html(final_response_text, disable_web_page_preview=True, quote=reply_mode)
     except Exception as e: logger.error(f"Fail send /nhapkey final U:{user_id}: {e}"); await context.bot.send_message(chat_id, final_response_text, parse_mode=ParseMode.HTML) # Fallback
-
-async def _rollback_nhapkey(key: str, user_id_str: str, user_id_int: int):
-    """Hàm helper để rollback thao tác nhập key nếu lỗi."""
-    try:
-        logger.info(f"Attempting rollback for key '{key}' user {user_id_int}.")
-        if key in valid_keys and valid_keys[key].get("used_by") == user_id_int:
-            valid_keys[key]["used_by"] = None
-            valid_keys[key]["activation_time"] = None
-            logger.info(f"Rolled back key data for '{key}'.")
-        if user_id_str in activated_users:
-            del activated_users[user_id_str]
-            logger.info(f"Removed user {user_id_str} from activated list.")
-        save_data()
-        logger.info(f"Rollback save complete for key '{key}'.")
-    except Exception as e_rb: logger.error(f"Error during key activation rollback key:{key} user:{user_id_int}: {e_rb}", exc_info=True)
-
-# --- Lệnh /muatt ---
-async def muatt_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    if not update or not update.message: return
-    user = update.effective_user; chat_id = update.effective_chat.id
-    if not user: return
-    # Nếu là lệnh /muatt gõ tay, lấy ID để xóa, nếu từ callback thì ko có
-    original_message_id = update.message.message_id if update.message.text and update.message.text.startswith('/') else None
-    user_id = user.id; payment_note = f"{PAYMENT_NOTE_PREFIX} {user_id}"
-    text_lines = ["👑 <b>Thông Tin Nâng Cấp VIP - DinoTool</b> 👑", "\nNâng VIP để mở khóa <code>/treo</code>, <code>/xemfl24h</code>, không cần key!", "\n💎 <b>Các Gói VIP:</b>"]
-    if VIP_PRICES:
-        for days_key, info in VIP_PRICES.items(): days=info.get("duration_days","?"); price=info.get("price","?"); limit=info.get("limit","?"); text_lines.extend([f"\n⭐️ <b>Gói {days} Ngày:</b>", f"   - 💰 Giá: <b>{price}</b>", f"   - ⏳ Hạn: {days} ngày", f"   - 🚀 Treo: <b>{limit} TK</b>"])
-    else: text_lines.append("\n<i>Liên hệ Admin để biết chi tiết gói.</i>")
-    text_lines.extend(["\n🏦 <b>Thông tin thanh toán:</b>", f"   - NH: <b>{BANK_NAME}</b>", f"   - STK: <a href=\"https://t.me/share/url?url={html.escape(BANK_ACCOUNT)}\"><code>{html.escape(BANK_ACCOUNT)}</code></a>", f"   - Tên: <b>{ACCOUNT_NAME}</b>", "\n📝 <b>Nội dung CK (Quan trọng!):</b>", f"   » <a href=\"https://t.me/share/url?url={html.escape(payment_note)}\"><code>{html.escape(payment_note)}</code></a> (Click copy)", f"   <i>(Sai ND có thể xử lý chậm)</i>", "\n📸 <b>Sau Khi CK Thành Công:</b>", f"   1️⃣ Chụp ảnh màn hình bill.", f"   2️⃣ Nhấn nút '<b>📸 Gửi Bill</b>' bên dưới.", f"   3️⃣ Bot sẽ yêu cầu gửi ảnh <b><u>VÀO CHAT NÀY</u></b>.", f"   4️⃣ Gửi ảnh bill vào đây.", f"   5️⃣ Bot tự chuyển tiếp bill đến Admin ({BILL_FORWARD_TARGET_ID}).", f"   6️⃣ Admin kiểm tra & kích hoạt VIP.", "\n<i>Cảm ơn bạn đã ủng hộ!</i> ❤️"])
-    caption_text = "\n".join(text_lines)
-    keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("📸 Gửi Bill Thanh Toán", callback_data=f"prompt_send_bill_{user_id}")]])
-    if original_message_id: try: await delete_user_message(update, context, original_message_id); logger.debug(f"Deleted /muatt cmd {original_message_id}")
-    except Exception as e: logger.debug(f"Could not delete /muatt cmd {original_message_id}: {e}")
-    photo_sent = False
-    if QR_CODE_URL and QR_CODE_URL.startswith("http"):
-        try: await context.bot.send_photo(chat_id=chat_id, photo=QR_CODE_URL, caption=caption_text, parse_mode=ParseMode.HTML, reply_markup=keyboard); logger.info(f"Sent /muatt QR U:{user_id} C:{chat_id}"); photo_sent = True
-        except (BadRequest, Forbidden, TelegramError) as e: logger.warning(f"Error send /muatt photo C:{chat_id}: {e}. Fallback.")
-        except Exception as e: logger.error(f"Unexpected err send /muatt photo C:{chat_id}: {e}", exc_info=True)
-    if not photo_sent:
-        try: await context.bot.send_message(chat_id=chat_id, text=caption_text, parse_mode=ParseMode.HTML, disable_web_page_preview=True, reply_markup=keyboard); logger.info(f"Sent /muatt text fallback U:{user_id} C:{chat_id}")
-        except Exception as e: logger.error(f"Error sending /muatt fallback text C:{chat_id}: {e}", exc_info=True)
-
 # --- Callback gửi Bill & Handler nhận Bill ---
 async def prompt_send_bill_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query; user = query.from_user; chat_id = query.message.chat_id
